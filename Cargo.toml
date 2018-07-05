@@ -1,0 +1,6 @@
+[package]
+name = "arguments"
+version = "0.1.0"
+authors = ["Damezuma <qweads12@gmail.com>"]
+
+[dependencies]
