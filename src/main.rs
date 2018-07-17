@@ -31,7 +31,7 @@ fn execute_clinet(ip:Option<Ipv4Addr>, port_number:Option<u16>){
             return;
         }
     };
-    let client = client::Client::new().unwrap();
+    let mut client = client::Client::new().unwrap();
     let mut s = String::new();
     std::io::stdin().read_line(&mut s);
     client.send(&s, &SocketAddrV4::new(ip, port_number));
