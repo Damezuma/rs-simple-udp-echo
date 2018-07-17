@@ -14,7 +14,10 @@ fn execute_server( ip:Option<Ipv4Addr>, port_number:Option<u16>){
         }
     };
     let server = server::Server::new(SocketAddrV4::new(ip, port_number)).unwrap();
-    server.recv();
+    loop{
+        server.recv();
+    }
+    
 }
 fn execute_clinet(ip:Option<Ipv4Addr>, port_number:Option<u16>){
     let ip = match ip{

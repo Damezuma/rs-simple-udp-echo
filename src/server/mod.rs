@@ -17,6 +17,7 @@ impl Server{
         let mut buffer =[0u8; 4096];
         match self.socket.recv_from(&mut buffer){
             Ok((size, ipv))=>{
+                self.socket.send_to(&buffer[0..size], ipv);
                 return Ok((String::from_utf8_lossy(&buffer[0..size]).to_string(), ipv));
             }
             Err(e)=>return Err(e)
